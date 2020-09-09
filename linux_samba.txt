@@ -1,0 +1,31 @@
+# Reference: https://www.computerhope.com/issues/ch001636.htm
+
+#I.- SHARING FOLDER WIHT LINUX IN WINDOWS 10
+
+#Create a shared folder on Windows
+#First, create a shared folder on your Windows machine.
+
+#Open the Control Panel.
+#Go to Network and Sharing Options.
+#Go to Change Advanced Sharing Settings.
+#Select Turn on Network Discovery and Turn on File and Print Sharing.
+#Now, create a new folder to share or choose an existing folder that you'd like to share.
+
+#Right-click the folder and select Properties.
+#Go to the Sharing tab.
+#Above the Share button is the network name of the share you are creating. It should look like \\YOURCOMPUTERNAME\Users\YourUserName\ShareFolderName. Make a note of this network name to use later on your Linux machine.
+#Click Share.
+
+
+
+#II.- LINUX 
+
+#If you use the yum package manager, which is the default on Linux systems such as CentOS, you can use the sudo yum install samba-client command.
+
+sudo yum install samba-client
+
+# connect with your user
+smbclient //[YOUR COMPUTER NAME]/Users/asuhajda/Desktop/Big%20Data/Shared -U [YOUR USER NAME]
+
+# OR connect using IP 
+smbclient //[YOUR COMPUTER NAME]/Users/asuhajda/Desktop/Big Data/Shared -I [YOUR UP ADDRESS]
